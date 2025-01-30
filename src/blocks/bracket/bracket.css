@@ -1,0 +1,32 @@
+.bracket-box{
+    border-radius: 5px;
+    padding-left: 70px;
+   padding-top: 15px;
+    margin: 10px;
+    position: relative;
+    box-shadow: 1px 1px 11px 1px rgba(34, 60, 80, 0.2);
+
+
+}
+
+.add-bracket {
+    background-image: url(../../images/plus.svg);
+    background-position: center;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: transparent;
+    
+}
+
+.delete-bracket {
+    background-image: url(../../images/minus.svg);
+    background-position: center;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: transparent;
+    margin-top: 10px
+}

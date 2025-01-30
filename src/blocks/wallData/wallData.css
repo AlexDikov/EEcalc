@@ -1,0 +1,109 @@
+.wallData {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.wallInput {
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 1fr;
+    margin: 10px;
+    position: relative;
+    box-shadow: 1px 1px 11px 1px rgba(30, 31, 33, 0.2);
+    height: 300px
+}
+
+.wallInputList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 11px;
+}
+
+.wallInputUnit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wallInputValue {
+    width: 60px;
+    border: none;
+    border-bottom: 1px solid;
+    border-color: rgb(216, 216, 216);
+    margin: 0 0 15px 10px;
+    
+}
+
+.wallInputValue:hover {
+    background-color: rgb(249, 247, 247);
+}
+
+.wallInputHeader {
+    align-self: center;
+    position: relative;
+}
+
+.wallInputSub {
+    font-size: 10px;
+    position: absolute;
+    top: 30px;
+    left: 45px
+}
+
+.wallInputSP {
+    display: flex;
+    justify-content: end;
+    font-size: 10px;
+    position: absolute;
+    bottom: 5px;
+}
+
+.wallCloseBtn {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 5px;
+    right:5px;
+    border: none;
+    background-image:url(../../images/cross.svg);
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+}
+
+.wallAddIns {
+    position: absolute;
+    bottom: -20px;
+    right: -5px;
+    border: none;
+    font-size: 12px;
+    background-color: transparent;
+}
+.ins-thickness {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    font-size: 10px;
+}
+
+.wall-font {
+    font-size: 12px;
+}
+
+.wall-p {
+    position: relative;
+}
+
+.wall-subp {
+    position: absolute;
+    top: 15px
+}
+
+.wall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
