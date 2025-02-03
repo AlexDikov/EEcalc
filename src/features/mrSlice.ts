@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const mrSlice = createSlice({
     name: 'mr',
-    initialState: 0,
+    initialState: 0.63,
     reducers: {
         setMr: (state, action) => {return action.payload}
     }

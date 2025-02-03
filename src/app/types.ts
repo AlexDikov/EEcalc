@@ -27,13 +27,11 @@ export interface CityType {
     s: string,
 }
 
-export type BuildingAimType = 1 | 2 | 3;
+export type BuildingAimType = number;
 
-export type BuildingTypeType = 1 | 2 | 3;
+export type BuildingTypeType = number;
 
 export type ConcreteWallType = boolean;
-
-
 
 export type humidityType = number;
 

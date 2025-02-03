@@ -1,5 +1,5 @@
 import { Routes } from 'react-router-dom'
-import  {homeRoute} from './constants/routes'
+import  {homeRoute} from '../constants/routes'
 import Header from './Header'
 
 function App() {
