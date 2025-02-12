@@ -1,0 +1,1 @@
+export {default as ObjData} from "./ObjData.tsx";
