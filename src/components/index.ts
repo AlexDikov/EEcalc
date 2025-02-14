@@ -1,1 +1,1 @@
-export {default as ObjData} from "./ObjData.tsx";
+export { App } from './app';
