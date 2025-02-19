@@ -2,10 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { Button } from 'react-bootstrap';
 import { firstFormMock } from '../../__mock__';
-import { setFirstForm } from '../../store/first-form/slices';
-import { firstFormSelector } from '../../store/first-form/selectors';
+import { firstFormSelector, setFirstForm } from '../../store/';
 
-export const FirstPage = () => {
+export const ObjData = () => {
   const dispatch = useDispatch();
 
   const firstForm = useSelector(firstFormSelector);

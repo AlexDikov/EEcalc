@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ROOT } from '../../constants';
-import { FirstPage } from '../../pages/first-page';
+import { FirstPage } from '../../pages';
 
 export const App = () => {
   return (

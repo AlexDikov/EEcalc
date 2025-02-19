@@ -1,1 +1,1 @@
-export { FirstPage } from './first-page.tsx';
+export { FirstPage } from './FirstPage.tsx';
