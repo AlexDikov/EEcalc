@@ -1,0 +1,1 @@
+export { ThirdPage } from './ThirdPage';

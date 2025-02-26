@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const firstForm = createSlice({
+export const firstFormSlice = createSlice({
   name: 'firstForm',
   initialState: {
     formData: undefined,
@@ -12,6 +12,6 @@ export const firstForm = createSlice({
   },
 });
 
-export const { setFirstForm } = firstForm.actions;
+export const { setFirstForm } = firstFormSlice.actions;
 
-export const firstFormReducer = firstForm.reducer;
+export const firstFormReducer = firstFormSlice.reducer;
