@@ -1,1 +1,1 @@
-export { ROOT } from './routes.ts';
+export { ROOT, WALLDATA, SYSTEMDATA, BRACKETDATA } from './routes.ts';

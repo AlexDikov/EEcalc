@@ -1,1 +1,1 @@
-export { firstForm, setFirstForm } from './slice-1.ts';
+export { firstFormSlice, firstFormReducer, setFirstForm } from './slice-1.ts';

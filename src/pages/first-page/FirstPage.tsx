@@ -1,5 +1,5 @@
-import { ObjData } from '../../components';
+import { ObjectData } from '../../components';
 
 export const FirstPage = () => {
-  return <ObjData />;
+  return <ObjectData />;
 };
