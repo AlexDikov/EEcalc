@@ -1,7 +1,7 @@
-import { FirstForm, FourthForm, SecondForm, ThirdForm } from './index';
+import { ObjectForm, FourthForm, SecondForm, ThirdForm } from './index';
 
 export type RootState = {
-  firstForm: { formData: FirstForm | undefined };
+  objectForm: { formData: ObjectForm | undefined };
   secondForm: { formData: SecondForm | undefined };
   thirdForm: { formData: ThirdForm | undefined };
   fourthForm: { formData: FourthForm | undefined };
