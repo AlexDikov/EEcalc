@@ -2,8 +2,8 @@ export type Inputs = {
   objectName: string;
   objectAddress: string;
   city: string;
-  buildingType: 1 | 2 | 3;
-  wallType: 1 | 2 | 3;
+  buildingType: string;
+  wallType: string;
   innerTemp: number;
   innerHumidity: number;
   mr: number;

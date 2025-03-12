@@ -6,8 +6,8 @@ export type ObjectForm = {
   innerHumidity: number;
   innerTemp: number;
   mr: number;
-  objectAddress: string | undefined;
-  objectName: string | undefined;
+  objectAddress?: string;
+  objectName?: string;
   vaporCalc: boolean;
   humidityZone: boolean;
 };
