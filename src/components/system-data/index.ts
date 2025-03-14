@@ -1,1 +1,1 @@
-export { SystemData } from './SystemData';
+export { SystemData } from './system-data';

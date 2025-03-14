@@ -1,1 +1,1 @@
-export { WallData } from './WallData';
+export { WallData } from './wall-data';

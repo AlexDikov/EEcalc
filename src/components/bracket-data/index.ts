@@ -1,1 +1,1 @@
-export { BracketData } from './BracketData';
+export { BracketData } from './bracket-data';

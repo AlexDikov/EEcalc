@@ -1,6 +1,6 @@
 export { store } from './store';
-export { firstFormSlice, setFirstForm } from './first-form/slices';
-export { firstFormSelector } from './first-form/selectors';
+export { objectFormSlice, setObjectForm } from './object-form/slices';
+export { objectDataSelector } from './object-form/selectors';
 export { secondFormSlice, setSecondForm } from './second-form/slices';
 export { secondFormSelector } from './second-form/selectors';
 export { thirdFormSlice, setThirdForm } from './third-form/slices';

@@ -1,1 +1,1 @@
-export { FourthPage } from './FourthPage';
+export { FourthPage } from './fourth-page';
