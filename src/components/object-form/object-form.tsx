@@ -4,9 +4,7 @@ import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { objectDataSelector, setObjectForm } from '../../store';
 import { Inputs } from '../../types';
 import { buildingTypeOptions, cities, wallTypeOptions } from '../../constants';
-import { Input } from '../inputs/Input';
-import { Select } from '../inputs/Select';
-import { optionList } from '../../utils';
+import { Input, Select } from '../ui-kit';
 
 export const ObjectForm = () => {
   const dispatch = useDispatch();
@@ -24,7 +22,8 @@ export const ObjectForm = () => {
 
   const formData = objectForm?.formData;
 
-  const dataCheck = formData && Object.entries(formData).map(([key, value]) => <li key={key}>{value}</li>);
+  const dataCheck =
+    typeof formData === 'object' ? Object.entries(formData).map(([key, value]) => ({ key, value })) : [];
 
   return (
     <>
@@ -32,16 +31,16 @@ export const ObjectForm = () => {
         <form className="object-form" onSubmit={methods.handleSubmit(onSubmit)}>
           <Input name="objectName" placeholder="Название объекта" type="text" />
           <Input name="objectAddress" placeholder="Адрес объекта" type="text" />
-          <Select name="city" placeholder="Город строительства" options={optionList(cities)} />
-          <Select name="buildingType" placeholder="Назначение здания" options={optionList(buildingTypeOptions)} />
-          <Select name="wallType" placeholder="Тип конструкции" options={optionList(wallTypeOptions)} />
+          <Select name="city" placeholder="Город строительства" options={cities} />
+          <Select name="buildingType" placeholder="Назначение здания" options={buildingTypeOptions} />
+          <Select name="wallType" placeholder="Тип конструкции" options={wallTypeOptions} />
           <Input name="innerTemp" type="range" />
           <Input name="innerHumidity" type="range" />
           <Input name="mr" type="number" />
           <button>ОТПРАВИТЬ</button>
         </form>
       </FormProvider>
-      <ul>{dataCheck}</ul>
+      <ul>{dataCheck.length > 0 ? dataCheck.map((item) => <li key={item.key}>{item.value}</li>) : null}</ul>
     </>
   );
 };

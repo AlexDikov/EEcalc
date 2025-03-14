@@ -1,1 +1,1 @@
-export { ObjectForm } from './ObjectForm.tsx';
+export { ObjectForm } from './object-form.tsx';
