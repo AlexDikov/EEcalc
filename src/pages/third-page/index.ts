@@ -1,1 +1,1 @@
-export { ThirdPage } from './ThirdPage';
+export { ThirdPage } from './third-page';
