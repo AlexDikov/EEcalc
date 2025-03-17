@@ -4,7 +4,7 @@ import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { objectDataSelector, setObjectForm } from '../../store';
 import { Inputs } from '../../types';
 import { buildingTypeOptions, cities, wallTypeOptions } from '../../constants';
-import { Input, Select } from '../ui-kit';
+import { Input, Range, Select } from '../ui-kit';
 
 export const ObjectForm = () => {
   const dispatch = useDispatch();
@@ -34,8 +34,8 @@ export const ObjectForm = () => {
           <Select name="city" placeholder="Город строительства" options={cities} />
           <Select name="buildingType" placeholder="Назначение здания" options={buildingTypeOptions} />
           <Select name="wallType" placeholder="Тип конструкции" options={wallTypeOptions} />
-          <Input name="innerTemp" type="range" />
-          <Input name="innerHumidity" type="range" />
+          <Range name="innerTemp" />
+          <Range name="innerHumidity" />
           <Input name="mr" type="number" />
           <button>ОТПРАВИТЬ</button>
         </form>
