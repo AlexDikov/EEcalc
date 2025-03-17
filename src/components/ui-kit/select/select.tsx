@@ -6,7 +6,7 @@ export const Select = (props: SelectProps) => {
 
   return (
     <select {...register(props.name)} id={props.name}>
-      <option>{props.placeholder}</option>
+      <option value="">{props.placeholder}</option>
       {props.options.map((item) => (
         <option key={item.value} value={item.value}>
           {item.name}
