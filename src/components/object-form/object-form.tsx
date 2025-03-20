@@ -1,34 +1,27 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
-import { objectDataSelector, setObjectForm } from '../../store';
-import { Inputs } from '../../types';
-import { buildingTypeOptions, cities, wallTypeOptions } from '../../constants';
+import { setObjectForm } from '../../store';
+import { ObjectFormType } from '../../types';
 import { Input, Range, Select } from '../ui-kit';
+import { buildingTypeOptions, cities, wallTypeOptions } from '../../constants';
 
 export const ObjectForm = () => {
   const dispatch = useDispatch();
 
-  const methods = useForm<Inputs>();
+  const methods = useForm<ObjectFormType>();
 
-  const onSubmit: SubmitHandler<Inputs> = useCallback(
+  const onSubmit: SubmitHandler<ObjectFormType> = useCallback(
     (data) => {
       dispatch(setObjectForm(data));
     },
     [dispatch]
   );
 
-  const objectForm = useSelector(objectDataSelector);
-
-  const formData = objectForm?.formData;
-
-  const dataCheck =
-    typeof formData === 'object' ? Object.entries(formData).map(([key, value]) => ({ key, value })) : [];
-
   return (
     <>
       <FormProvider {...methods}>
-        <form className="object-form" onSubmit={methods.handleSubmit(onSubmit)}>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
           <Input name="objectName" placeholder="Название объекта" type="text" />
           <Input name="objectAddress" placeholder="Адрес объекта" type="text" />
           <Select name="city" placeholder="Город строительства" options={cities} />
@@ -40,7 +33,6 @@ export const ObjectForm = () => {
           <button>ОТПРАВИТЬ</button>
         </form>
       </FormProvider>
-      <ul>{dataCheck.length > 0 ? dataCheck.map((item) => <li key={item.key}>{item.value}</li>) : null}</ul>
     </>
   );
 };

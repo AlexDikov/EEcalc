@@ -1,4 +1,4 @@
-export { objectDataMock } from './object-data';
-export { secondFormMock } from './second-form';
-export { thirdFormMock } from './third-form';
-export { fourthFormMock } from './fourth-form';
+export { objectFormMock } from './object-form';
+export { wallFormMock } from './wall-form';
+export { systemFormMock } from './system-form';
+export { bracketFormMock } from './bracket-form';
