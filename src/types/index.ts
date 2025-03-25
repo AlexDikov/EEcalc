@@ -1,7 +1,10 @@
-export type { ObjectForm } from './object-form';
-export type { SecondForm } from './second-form';
-export type { ThirdForm } from './third-form';
-export type { FourthForm } from './fourth-form';
+export type { ObjectFormType } from './object-form';
+export type { WallFormType } from './wall-form';
+export type { SystemFormType } from './system-form';
+export type { BracketFormType } from './bracket-form';
 export type { RootState } from './root-state';
 export type { City } from './city';
-export type { Inputs } from './inputs';
+export type { InputProps } from './input-props';
+export type { RangeProps } from './range-props';
+export type { RadioProps } from './radio-props';
+export type { SelectProps } from './select-props';
