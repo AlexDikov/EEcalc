@@ -1,5 +1,5 @@
-import { BracketForm } from '../../components';
+import { BracketData } from '../../components';
 
 export const FourthPage = () => {
-  return <BracketForm />;
+  return <BracketData />;
 };

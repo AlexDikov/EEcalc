@@ -1,8 +1,8 @@
-import { ObjectFormType, BracketFormType, WallFormType, SystemFormType } from './index';
+import { ObjectForm, FourthForm, SecondForm, ThirdForm } from './index';
 
 export type RootState = {
-  objectForm: { formData: ObjectFormType | undefined };
-  wallForm: { formData: WallFormType | undefined };
-  systemForm: { formData: SystemFormType | undefined };
-  bracketForm: { formData: BracketFormType | undefined };
+  objectForm: { formData: ObjectForm | undefined };
+  secondForm: { formData: SecondForm | undefined };
+  thirdForm: { formData: ThirdForm | undefined };
+  fourthForm: { formData: FourthForm | undefined };
 };

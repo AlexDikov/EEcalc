@@ -1,5 +1,5 @@
 import { useFormContext } from 'react-hook-form';
-import { RangeProps } from '../../../types';
+import { RangeProps } from '../../../types/range-props';
 
 export const Range = (props: RangeProps) => {
   const { register } = useFormContext();

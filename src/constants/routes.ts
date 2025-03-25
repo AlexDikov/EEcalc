@@ -1,4 +1,4 @@
 export const ROOT = '/';
-export const WALLFORM = '/wallform';
-export const SYSTEMFORM = '/systemform';
-export const BRACKETFORM = '/bracketform';
+export const WALLDATA = '/walldata';
+export const SYSTEMDATA = '/systemdata';
+export const BRACKETDATA = '/bracketdata';

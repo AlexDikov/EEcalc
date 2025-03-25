@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { objectFormReducer } from './object-form/slices';
-import { wallFormReducer } from './wall-form/slices';
-import { systemFormReducer } from './system-form/slices';
-import { bracketFormReducer } from './bracket-form/slices';
+import { secondFormReducer } from './second-form/slices';
+import { thirdFormReducer } from './third-form/slices';
+import { fourthFormReducer } from './fourth-form/slices';
 
 export const store = configureStore({
   reducer: {
     objectForm: objectFormReducer,
-    wallForm: wallFormReducer,
-    systemForm: systemFormReducer,
-    bracketForm: bracketFormReducer,
+    secondForm: secondFormReducer,
+    thirdForm: thirdFormReducer,
+    fourthForm: fourthFormReducer,
   },
 });

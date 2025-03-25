@@ -1,5 +1,5 @@
-import { SystemForm } from '../../components';
+import { SystemData } from '../../components';
 
 export const ThirdPage = () => {
-  return <SystemForm />;
+  return <SystemData />;
 };

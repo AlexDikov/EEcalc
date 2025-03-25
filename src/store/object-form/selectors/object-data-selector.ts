@@ -1,3 +1,3 @@
-import { ObjectFormType, RootState } from '../../../types';
+import { ObjectForm, RootState } from '../../../types';
 
-export const objectDataSelector = (state: RootState): { formData: ObjectFormType | undefined } => state.objectForm;
+export const objectDataSelector = (state: RootState): { formData: ObjectForm | undefined } => state.objectForm;
