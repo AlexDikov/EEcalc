@@ -1,5 +1,5 @@
 import { ObjectForm } from '../../components';
 
-export const FirstPage = () => {
+export const ObjectPage = () => {
   return <ObjectForm />;
 };

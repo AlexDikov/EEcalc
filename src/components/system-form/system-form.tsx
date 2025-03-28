@@ -3,8 +3,9 @@ import { setSystemForm } from '../../store';
 import { useCallback } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { SystemFormType } from '../../types';
-import { Input, Select, Radio } from '../ui-kit';
+import { Input, Select } from '../ui-kit';
 import { anchorDepthOptions, insulationPositionOptions, windowPositionOptions } from '../../constants';
+import { RadioGroup } from '../ui-kit/radio-group/RadioGroup';
 
 export const SystemForm = () => {
   const dispatch = useDispatch();
@@ -21,12 +22,8 @@ export const SystemForm = () => {
           <Input name="windowLength" type="number" placeholder="м" />
           <Input name="anchorQuantity" type="number" placeholder="шт/м²" />
           <Select name="anchorDepth" placeholder="мм" options={anchorDepthOptions} />
-          {windowPositionOptions.map((item) => (
-            <Radio name="windowPosition" value={item.value} label={item.label} key={item.value} />
-          ))}
-          {insulationPositionOptions.map((item) => (
-            <Radio name="insulationPosition" value={item.value} label={item.label} key={item.value} />
-          ))}
+          <RadioGroup options={windowPositionOptions} name="windowPosition" />
+          <RadioGroup options={insulationPositionOptions} name="insulationPosition" />
           <button>ОТПРАВИТЬ</button>
         </form>
       </FormProvider>

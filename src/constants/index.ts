@@ -1,4 +1,4 @@
-export { ROOT, WALLFORM, SYSTEMFORM, BRACKETFORM } from './routes.ts';
+export { ROOT, WALLPAGE, SYSTEMPAGE, BRACKETPAGE } from './routes.ts';
 export { cities } from './cities.ts';
 export {
   buildingTypeOptions,

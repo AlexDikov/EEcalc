@@ -1,4 +1,4 @@
-export { FirstPage } from './first-page';
-export { SecondPage } from './second-page';
-export { ThirdPage } from './third-page';
-export { FourthPage } from './fourth-page';
+export { ObjectPage } from './object-page';
+export { WallPage } from './wall-page';
+export { SystemPage } from './system-page';
+export { BracketPage } from './bracket-page';

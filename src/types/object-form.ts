@@ -1,10 +1,11 @@
 export type ObjectFormType = {
-  buildingType: number;
-  wallType: number;
-  city: number;
+  buildingType: string;
+  wallType: string;
+  city: string;
   innerHumidity: number;
   innerTemp: number;
   mr: number;
-  objectAddress?: string;
-  objectName?: string;
+  objectAddress: string;
+  objectName: string;
+  hasConcreteWall: boolean;
 };

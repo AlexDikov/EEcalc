@@ -8,3 +8,6 @@ export type { InputProps } from './input-props';
 export type { RangeProps } from './range-props';
 export type { RadioProps } from './radio-props';
 export type { SelectProps } from './select-props';
+export type { CheckboxProps } from './checkbox-props';
+export type { RadioGroupProps } from './radio-group-props';
+export type { ErrorProps } from './error-props';
