@@ -1,11 +1,11 @@
 import { RadioGroupProps } from '../../../types';
 import { Radio } from '../radio';
 
-export const RadioGroup = (props: RadioGroupProps) => {
+export const RadioGroup = ({ name, options }: RadioGroupProps) => {
   return (
     <>
-      {props.options.map((item) => (
-        <Radio name={props.name} value={item.value} label={item.label} key={item.value} />
+      {options.map((item) => (
+        <Radio name={name} value={item.value} label={item.label} key={item.value} />
       ))}
     </>
   );

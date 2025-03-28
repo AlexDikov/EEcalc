@@ -2,46 +2,46 @@ import { useFormContext } from 'react-hook-form';
 import { InputProps } from '../../../types';
 import { ErrorMessage } from '../error-message/error-message';
 
-export const Input = (props: InputProps) => {
+export const Input = ({ name, placeholder, type, min, max, minLength, maxLength, isRequired }: InputProps) => {
   const { register } = useFormContext();
-  const isNumber = props.type === 'number' ? true : false;
+  const isNumber = type === 'number' ? true : false;
 
   return (
     <>
       <input
-        {...register(props.name, {
-          required: props.isRequired && 'Заполните поле',
+        {...register(name, {
+          required: isRequired && 'Заполните поле',
 
-          ...(props.min && {
+          ...(min && {
             min: {
-              value: props.min,
-              message: `Значение не должно быть менее ${props.min}`,
+              value: min,
+              message: `Значение не должно быть менее ${min}`,
             },
           }),
 
-          ...(props.max && {
+          ...(max && {
             max: {
-              value: props.max,
-              message: `Значение не должно превышать ${props.max}`,
+              value: max,
+              message: `Значение не должно превышать ${max}`,
             },
           }),
 
-          ...(props.minLength && {
+          ...(minLength && {
             minLength: {
-              value: props.minLength,
-              message: `Введите минимум ${props.minLength} символов`,
+              value: minLength,
+              message: `Введите минимум ${minLength} символов`,
             },
           }),
 
-          ...(props.maxLength && {
-            maxLength: { value: props.maxLength, message: `Введите не более ${props.maxLength} символов` },
+          ...(maxLength && {
+            maxLength: { value: maxLength, message: `Введите не более ${maxLength} символов` },
           }),
           valueAsNumber: isNumber,
         })}
-        placeholder={props.placeholder}
-        type={props.type}
+        placeholder={placeholder}
+        type={type}
       />
-      <ErrorMessage name={props.name} />
+      <ErrorMessage name={name} />
     </>
   );
 };

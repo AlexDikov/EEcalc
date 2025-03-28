@@ -12,28 +12,19 @@ export const ObjectForm = () => {
   const dispatch = useDispatch();
 
   const methods = useForm<ObjectFormType>({ mode: 'onBlur' });
-  const {
-    control,
-    formState: { isValid },
-  } = methods;
-
-  const onSubmit: SubmitHandler<ObjectFormType> = useCallback(
-    (data) => {
-      console.log(data);
-      dispatch(setObjectForm(data));
-    },
-    [dispatch]
-  );
-
-  const watchConcreteWall = useWatch({ control, name: 'wallType' });
+  const { control } = methods;
 
   const navigate = useNavigate();
 
-  const forwardPage = () => {
-    {
-      if (isValid) navigate(WALLPAGE);
-    }
-  };
+  const onSubmit: SubmitHandler<ObjectFormType> = useCallback(
+    (data) => {
+      dispatch(setObjectForm(data));
+      navigate(WALLPAGE);
+    },
+    [dispatch, navigate]
+  );
+
+  const wallTypeField = useWatch({ control, name: 'wallType' });
 
   return (
     <>
@@ -55,14 +46,19 @@ export const ObjectForm = () => {
             maxLength={100}
             isRequired={true}
           />
-          <Select name="city" placeholder="Город строительства" options={cities} />
-          <Select name="buildingType" placeholder="Назначение здания" options={buildingTypeOptions} />
-          <Select name="wallType" placeholder="Тип конструкции" options={wallTypeOptions} />
-          {watchConcreteWall === 'frame' ? <Checkbox name="hasConcreteWall" label="Стены из монолита" /> : null}
+          <Select name="city" placeholder="Город строительства" options={cities} errorMessage="Выберете город" />
+          <Select
+            name="buildingType"
+            placeholder="Назначение здания"
+            options={buildingTypeOptions}
+            errorMessage="Выберете назначение"
+          />
+          <Select name="wallType" placeholder="Тип конструкции" options={wallTypeOptions} errorMessage="Выберете тип" />
+          {wallTypeField === 'frame' ? <Checkbox name="hasConcreteWall" label="Стены из монолита" /> : null}
           <Range name="innerTemp" minValue={16} maxValue={26} defaultValue={20} />
           <Range name="innerHumidity" minValue={30} maxValue={100} defaultValue={40} />
           <Input name="mr" placeholder="1" type="number" min={0.63} max={1} isRequired={true} />
-          <button onSubmit={forwardPage}>ОТПРАВИТЬ</button>
+          <button>ОТПРАВИТЬ</button>
         </form>
         <DevTool control={control} />
       </FormProvider>

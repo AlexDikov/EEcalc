@@ -1,11 +1,10 @@
 import { useFormContext } from 'react-hook-form';
 import { ErrorProps } from '../../../types';
 
-export const ErrorMessage = (props: ErrorProps) => {
+export const ErrorMessage = ({ name }: ErrorProps) => {
   const {
     formState: { errors },
   } = useFormContext();
-  const name = props.name;
 
   return (
     <>
