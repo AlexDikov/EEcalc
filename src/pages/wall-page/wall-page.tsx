@@ -1,5 +1,5 @@
 import { WallForm } from '../../components';
 
-export const SecondPage = () => {
+export const WallPage = () => {
   return <WallForm />;
 };
