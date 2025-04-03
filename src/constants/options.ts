@@ -113,3 +113,81 @@ export const anchorDepthOptions = [
     value: '0.002',
   },
 ];
+
+export const insulationOptions = [
+  {
+    value: 'rockwool',
+    name: 'Минеральная вата',
+  },
+  {
+    value: 'pu',
+    name: 'Полиуретан',
+  },
+  {
+    value: 'xps',
+    name: 'Полистирол',
+  },
+];
+
+export const insulationDensityOptions = [
+  {
+    value: '500',
+    name: '500',
+  },
+  {
+    value: '400',
+    name: '400',
+  },
+  {
+    value: '300',
+    name: '300',
+  },
+];
+
+export const blockOptions = [
+  {
+    value: 'foamblock',
+    name: 'Пеноблок',
+  },
+  {
+    value: 'brick',
+    name: 'Кирпич',
+  },
+  {
+    value: 'cerbrick',
+    name: 'Керамзитобетон',
+  },
+];
+
+export const blockDensityOptions = {
+  foamblock: [
+    {
+      value: '500',
+      name: '500',
+    },
+    {
+      value: '400',
+      name: '400',
+    },
+  ],
+  brick: [
+    {
+      value: '300',
+      name: '300',
+    },
+    {
+      value: '200',
+      name: '200',
+    },
+  ],
+  cerbrick: [
+    {
+      value: '120',
+      name: '120',
+    },
+    {
+      value: '80',
+      name: '80',
+    },
+  ],
+};

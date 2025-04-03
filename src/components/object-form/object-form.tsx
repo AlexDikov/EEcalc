@@ -11,7 +11,7 @@ import { DevTool } from '@hookform/devtools';
 export const ObjectForm = () => {
   const dispatch = useDispatch();
 
-  const methods = useForm<ObjectFormType>({ mode: 'onBlur' });
+  const methods = useForm<ObjectFormType>({ mode: 'onBlur', defaultValues: { mr: 1 } });
   const { control } = methods;
 
   const navigate = useNavigate();
