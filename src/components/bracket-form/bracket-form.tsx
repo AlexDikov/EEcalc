@@ -18,6 +18,9 @@ export const BracketForm = () => {
     control,
   });
 
+  console.log('fields', fields);
+  
+
   const onSubmit: SubmitHandler<BracketFormType> = useCallback(
     (data) => {
       console.log(data);
@@ -34,7 +37,7 @@ export const BracketForm = () => {
           <button
             type="button"
             onClick={() =>
-              append({ bracketMaterial: 'aluminium', bracketType: 'light', bracketName: '', bracketQuantity: 0 })
+              append({ bracketMaterial: '', bracketType: '', bracketName: '', bracketQuantity: 0 })
             }
           >
             Добавить
