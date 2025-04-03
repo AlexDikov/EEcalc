@@ -1,18 +1,26 @@
 import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
 import { setBracketForm } from '../../store';
-import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { FormProvider, SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
 import { BracketFormType } from '../../types';
-import { Input, Select, Radio } from '../ui-kit';
-import { bracketMaterialOptions, bracketNameOptions, bracketTypeOptions } from '../../constants';
+import { DevTool } from '@hookform/devtools';
+import { BracketList } from '../ui-kit';
 
 export const BracketForm = () => {
   const dispatch = useDispatch();
 
   const methods = useForm<BracketFormType>();
 
+  const { control } = methods;
+
+  const { fields, append, remove } = useFieldArray({
+    name: 'bracket',
+    control,
+  });
+
   const onSubmit: SubmitHandler<BracketFormType> = useCallback(
     (data) => {
+      console.log(data);
       dispatch(setBracketForm(data));
     },
     [dispatch]
@@ -22,16 +30,18 @@ export const BracketForm = () => {
     <>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)}>
-          {bracketMaterialOptions.map((item) => (
-            <Radio name="bracketMaterial" value={item.value} label={item.label} key={item.value} />
-          ))}
-          {bracketTypeOptions.map((item) => (
-            <Radio name="bracketType" value={item.value} label={item.label} key={item.value} />
-          ))}
-          <Select name="bracketName" placeholder="Тип кронштейна" options={bracketNameOptions} />
-          <Input name="bracketQuantity" placeholder="Шт" type="number" />
+          <BracketList fields={fields} remove={remove} />
+          <button
+            type="button"
+            onClick={() =>
+              append({ bracketMaterial: 'aluminium', bracketType: 'light', bracketName: '', bracketQuantity: 0 })
+            }
+          >
+            Добавить
+          </button>
           <button>ОТПРАВИТЬ</button>
         </form>
+        <DevTool control={control} />
       </FormProvider>
     </>
   );
