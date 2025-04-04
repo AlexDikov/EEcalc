@@ -129,20 +129,38 @@ export const insulationOptions = [
   },
 ];
 
-export const insulationDensityOptions = [
-  {
-    value: '500',
-    name: '500',
-  },
-  {
-    value: '400',
-    name: '400',
-  },
-  {
-    value: '300',
-    name: '300',
-  },
-];
+export const insulationDensityOptions = {
+  rockwool: [
+    {
+      value: '80',
+      name: '80',
+    },
+    {
+      value: '80',
+      name: '80',
+    },
+  ],
+  pu: [
+    {
+      value: '50',
+      name: '50',
+    },
+    {
+      value: '40',
+      name: '40',
+    },
+  ],
+  xps: [
+    {
+      value: '30',
+      name: '30',
+    },
+    {
+      value: '20',
+      name: '20',
+    },
+  ],
+};
 
 export const blockOptions = [
   {

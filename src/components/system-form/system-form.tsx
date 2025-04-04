@@ -2,9 +2,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { objectDataSelector, setSystemForm } from '../../store';
 import { useCallback } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { SystemFormType } from '../../types';
 import { Input, Select, RadioGroup } from '../ui-kit';
-import { anchorDepthOptions, insulationPositionOptions, windowPositionOptions } from '../../constants';
+import { anchorDepthOptions, BRACKETPAGE, insulationPositionOptions, windowPositionOptions } from '../../constants';
 
 export const SystemForm = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,14 @@ export const SystemForm = () => {
     defaultValues: { windowPosition: 'flat', insulationPosition: 'zero' },
   });
 
-  const onSubmit: SubmitHandler<SystemFormType> = useCallback((data) => dispatch(setSystemForm(data)), [dispatch]);
+  const navigate = useNavigate();
+
+  const onSubmit: SubmitHandler<SystemFormType> = useCallback(
+    (data) => {
+      return dispatch(setSystemForm(data)), navigate(BRACKETPAGE);
+    },
+    [dispatch, navigate]
+  );
 
   const objectData = useSelector(objectDataSelector);
 

@@ -25,7 +25,6 @@ export const WallForm = () => {
 
   const onSubmit: SubmitHandler<WallFormType> = useCallback(
     (data) => {
-      console.log(data);
       dispatch(setWallForm(data));
       navigate(SYSTEMPAGE);
     },

@@ -11,9 +11,11 @@ export const WallItemForm = ({ title, subtitle, material, nameOptions, densityOp
 
   const shouldRender = material !== 'concrete' && isSP && nameOptions && densityOptions;
 
-  const blockName = useWatch({ name: 'blockName' });
+  const materialName = useWatch({ name: `${material}Name` });
 
-  const densityOps = densityOptions ? Object.entries(densityOptions).find((item) => item[0] === blockName) : undefined;
+  const densityOps = densityOptions
+    ? Object.entries(densityOptions).find((item) => item[0] === materialName)
+    : undefined;
 
   const density = densityOps ? densityOps[1] : undefined;
 
@@ -29,7 +31,7 @@ export const WallItemForm = ({ title, subtitle, material, nameOptions, densityOp
           errorMessage="Выберете тип"
         />
       )}
-      {shouldRender && blockName && (
+      {shouldRender && density && (
         <Select
           name={`${material}Density`}
           options={density}

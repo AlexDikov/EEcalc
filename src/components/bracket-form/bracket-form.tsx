@@ -1,10 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
-import { setBracketForm } from '../../store';
 import { FormProvider, SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
+import { setBracketForm } from '../../store';
 import { BracketFormType } from '../../types';
-import { DevTool } from '@hookform/devtools';
 import { BracketList } from '../ui-kit';
+import { DevTool } from '@hookform/devtools';
 
 export const BracketForm = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,6 @@ export const BracketForm = () => {
 
   const onSubmit: SubmitHandler<BracketFormType> = useCallback(
     (data) => {
-      console.log(data);
       dispatch(setBracketForm(data));
     },
     [dispatch]
@@ -34,7 +33,7 @@ export const BracketForm = () => {
           <button
             type="button"
             onClick={() =>
-              append({ bracketMaterial: 'aluminium', bracketType: 'light', bracketName: '', bracketQuantity: 0 })
+              append({ bracketMaterial: 'aluminium', bracketType: 'light', bracketName: '', bracketQuantity: null })
             }
           >
             Добавить

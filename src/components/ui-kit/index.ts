@@ -6,4 +6,4 @@ export { Checkbox } from './checkbox';
 export { RadioGroup } from './radio-group';
 export { WallItemForm } from './wall-item-form';
 export { BracketItemForm } from './bracket-item-form';
-export { BracketList } from './bracket-items';
+export { BracketList } from './bracket-list';

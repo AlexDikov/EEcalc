@@ -1,12 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FormProvider, SubmitHandler, useForm, useWatch } from 'react-hook-form';
 import { setObjectForm } from '../../store';
 import { ObjectFormType } from '../../types';
 import { Checkbox, Input, Range, Select } from '../ui-kit';
 import { buildingTypeOptions, cities, WALLPAGE, wallTypeOptions } from '../../constants';
-import { useNavigate } from 'react-router-dom';
-import { DevTool } from '@hookform/devtools';
 
 export const ObjectForm = () => {
   const dispatch = useDispatch();
@@ -60,7 +59,6 @@ export const ObjectForm = () => {
           <Input name="mr" placeholder="1" type="number" min={0.63} max={1} isRequired={true} />
           <button>ОТПРАВИТЬ</button>
         </form>
-        <DevTool control={control} />
       </FormProvider>
     </>
   );
