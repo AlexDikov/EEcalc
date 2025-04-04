@@ -26,6 +26,8 @@ export const BracketItemForm = ({
       <button
         type="button"
         onClick={() => {
+          console.log('index', index);
+          
           remove(index);
         }}
       >

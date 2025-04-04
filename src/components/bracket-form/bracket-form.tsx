@@ -17,6 +17,8 @@ export const BracketForm = () => {
     control,
   });
 
+  console.log('fields', fields);
+
   const onSubmit: SubmitHandler<BracketFormType> = useCallback(
     (data) => {
       dispatch(setBracketForm(data));
