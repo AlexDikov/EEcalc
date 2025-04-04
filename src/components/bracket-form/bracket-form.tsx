@@ -4,7 +4,6 @@ import { FormProvider, SubmitHandler, useFieldArray, useForm } from 'react-hook-
 import { setBracketForm } from '../../store';
 import { BracketFormType } from '../../types';
 import { BracketList } from '../ui-kit';
-import { DevTool } from '@hookform/devtools';
 
 export const BracketForm = () => {
   const dispatch = useDispatch();
@@ -40,7 +39,6 @@ export const BracketForm = () => {
           </button>
           <button>ОТПРАВИТЬ</button>
         </form>
-        <DevTool control={control} />
       </FormProvider>
     </>
   );
