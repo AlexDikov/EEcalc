@@ -9,4 +9,8 @@ export {
   windowPositionOptions,
   insulationPositionOptions,
   anchorDepthOptions,
+  blockDensityOptions,
+  blockOptions,
+  insulationDensityOptions,
+  insulationOptions,
 } from './options.ts';
