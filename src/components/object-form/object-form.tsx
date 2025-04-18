@@ -10,7 +10,7 @@ import { buildingTypeOptions, cities, WALLPAGE, wallTypeOptions } from '../../co
 export const ObjectForm = () => {
   const dispatch = useDispatch();
 
-  const methods = useForm<ObjectFormType>({ mode: 'onBlur', defaultValues: { mr: 1 } });
+  const methods = useForm<ObjectFormType>({ mode: 'onBlur' });
   const { control } = methods;
 
   const navigate = useNavigate();
@@ -29,22 +29,8 @@ export const ObjectForm = () => {
     <>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)} noValidate>
-          <Input
-            name="objectName"
-            placeholder="Название объекта"
-            type="text"
-            minLength={5}
-            maxLength={100}
-            isRequired={true}
-          />
-          <Input
-            name="objectAddress"
-            placeholder="Адрес объекта"
-            type="text"
-            minLength={5}
-            maxLength={100}
-            isRequired={true}
-          />
+          <Input name="objectName" placeholder="Название объекта" type="text" minLength={5} maxLength={100} />
+          <Input name="objectAddress" placeholder="Адрес объекта" type="text" minLength={5} maxLength={100} />
           <Select name="city" placeholder="Город строительства" options={cities} errorMessage="Выберете город" />
           <Select
             name="buildingType"
@@ -56,9 +42,10 @@ export const ObjectForm = () => {
           {wallTypeField === 'frame' ? <Checkbox name="hasConcreteWall" label="Стены из монолита" /> : null}
           <Range name="innerTemp" minValue={16} maxValue={26} defaultValue={20} />
           <Range name="innerHumidity" minValue={30} maxValue={100} defaultValue={40} />
-          <Input name="mr" placeholder="1" type="number" min={0.63} max={1} isRequired={true} />
+          <Input name="mr" placeholder="1" type="number" min={0.63} max={1} />
           <button>ОТПРАВИТЬ</button>
         </form>
+        <button onClick={() => navigate(WALLPAGE)}>ВПЕРЕД</button>
       </FormProvider>
     </>
   );

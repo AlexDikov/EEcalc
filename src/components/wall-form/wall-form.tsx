@@ -10,6 +10,7 @@ import {
   blockOptions,
   insulationDensityOptions,
   insulationOptions,
+  ROOT,
   SYSTEMPAGE,
 } from '../../constants';
 import { Checkbox } from '../ui-kit';
@@ -34,8 +35,6 @@ export const WallForm = () => {
   const objectData = useSelector(objectDataSelector);
 
   const wallType = objectData.formData?.wallType;
-
-  console.log(wallType);
 
   const hasSecondInsulation = useWatch({ control, name: 'hasSecondInsulation' });
 
@@ -71,6 +70,8 @@ export const WallForm = () => {
           <Checkbox name="hasSecondInsulation" label="Добавить второй слой" />
           <button>ОТПРАВИТЬ</button>
         </form>
+        <button onClick={() => navigate(ROOT)}>НАЗАД</button>
+        <button onClick={() => navigate(SYSTEMPAGE)}>ВПЕРЕД</button>
       </FormProvider>
     </>
   );

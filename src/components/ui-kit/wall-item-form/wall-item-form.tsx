@@ -9,21 +9,25 @@ export const WallItemForm = ({ title, subtitle, material, nameOptions, densityOp
 
   const hasSecondInsulation = useWatch({ name: 'hasSecondInsulation' });
 
-  const shouldRender = material !== 'concrete' && isSP && nameOptions && densityOptions;
+  const shouldRenderSpOptions = material !== 'concrete' && isSP && nameOptions && densityOptions;
 
   const materialName = useWatch({ name: `${material}Name` });
 
-  const densityOps = densityOptions
-    ? Object.entries(densityOptions).find((item) => item[0] === materialName)
-    : undefined;
+  const densityOps = () => {
+    for (const key in densityOptions) {
+      if (key === materialName) {
+        return densityOptions[key];
+      }
+    }
+  };
 
-  const density = densityOps ? densityOps[1] : undefined;
+  const density = densityOps();
 
   return (
     <>
       <h2>{title}</h2>
       {hasSecondInsulation && <h4>{subtitle}</h4>}
-      {shouldRender && (
+      {shouldRenderSpOptions && (
         <Select
           name={`${material}Name`}
           options={nameOptions}
@@ -31,7 +35,7 @@ export const WallItemForm = ({ title, subtitle, material, nameOptions, densityOp
           errorMessage="Выберете тип"
         />
       )}
-      {shouldRender && density && (
+      {shouldRenderSpOptions && density && (
         <Select
           name={`${material}Density`}
           options={density}
@@ -39,14 +43,8 @@ export const WallItemForm = ({ title, subtitle, material, nameOptions, densityOp
           errorMessage="Выберете плотность"
         />
       )}
-      <Input name={`${material}Thickness`} placeholder="Толщина, мм" type="number" isRequired={true} />
-      <Input
-        name={`${material}HeatConduction`}
-        placeholder="Теплопроводность, Вт/м²"
-        type="number"
-        max={3}
-        isRequired={true}
-      />
+      <Input name={`${material}Thickness`} placeholder="Толщина, мм" type="number" />
+      <Input name={`${material}HeatConduction`} placeholder="Теплопроводность, Вт/м²" type="number" max={3} />
       <Checkbox name={`is${material}Sp`} label="учитывать СП 50.133300.2012" />
     </>
   );

@@ -1,9 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FormProvider, SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
 import { setBracketForm } from '../../store';
 import { BracketFormType } from '../../types';
 import { BracketList } from '../ui-kit';
+import { SYSTEMPAGE } from '../../constants';
 
 export const BracketForm = () => {
   const dispatch = useDispatch();
@@ -12,12 +14,12 @@ export const BracketForm = () => {
 
   const { control } = methods;
 
+  const navigate = useNavigate();
+
   const { fields, append, remove } = useFieldArray({
     name: 'bracket',
     control,
   });
-
-  console.log('fields', fields);
 
   const onSubmit: SubmitHandler<BracketFormType> = useCallback(
     (data) => {
@@ -41,6 +43,7 @@ export const BracketForm = () => {
           </button>
           <button>ОТПРАВИТЬ</button>
         </form>
+        <button onClick={() => navigate(SYSTEMPAGE)}>НАЗАД</button>
       </FormProvider>
     </>
   );
