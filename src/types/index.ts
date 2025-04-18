@@ -11,3 +11,6 @@ export type { SelectProps } from './select-props';
 export type { CheckboxProps } from './checkbox-props';
 export type { RadioGroupProps } from './radio-group-props';
 export type { ErrorProps } from './error-props';
+export type { WallItemFormProps } from './wall-item-form-props';
+export type { BracketItemFormProps } from './bracket-item-form-props';
+export type { BracketListProps } from './bracket-list-props';

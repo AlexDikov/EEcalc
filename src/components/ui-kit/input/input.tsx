@@ -2,7 +2,7 @@ import { useFormContext } from 'react-hook-form';
 import { InputProps } from '../../../types';
 import { ErrorMessage } from '../error-message/error-message';
 
-export const Input = ({ name, placeholder, type, min, max, minLength, maxLength, isRequired }: InputProps) => {
+export const Input = ({ name, placeholder, type, min, max, minLength, maxLength }: InputProps) => {
   const { register } = useFormContext();
   const isNumber = type === 'number' ? true : false;
 
@@ -10,7 +10,7 @@ export const Input = ({ name, placeholder, type, min, max, minLength, maxLength,
     <>
       <input
         {...register(name, {
-          required: isRequired && 'Заполните поле',
+          required: 'Заполните поле',
 
           ...(min && {
             min: {
