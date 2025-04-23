@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { objectDataSelector, setSystemForm } from '../../store';
+import { objectDataSelector, setSystemForm, systemDataSelector } from '../../store';
 import { useCallback } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
@@ -16,9 +16,11 @@ import {
 export const SystemForm = () => {
   const dispatch = useDispatch();
 
+  const formData = useSelector(systemDataSelector);
+
   const methods = useForm<SystemFormType>({
     mode: 'onBlur',
-    defaultValues: { windowPosition: 'flat', insulationPosition: 'zero' },
+    defaultValues: formData,
   });
 
   const navigate = useNavigate();
@@ -32,7 +34,7 @@ export const SystemForm = () => {
 
   const objectData = useSelector(objectDataSelector);
 
-  const hasConcreteWall = objectData.formData?.hasConcreteWall;
+  const hasConcreteWall = objectData?.hasConcreteWall;
 
   return (
     <>
@@ -40,7 +42,7 @@ export const SystemForm = () => {
         <form onSubmit={methods.handleSubmit(onSubmit)}>
           <Input name="wallArea" type="number" placeholder="м²" />
           {hasConcreteWall && <Input name="concreteWallArea" type="number" placeholder="м²" />}
-          <Input name="concreteWindowLength" type="number" placeholder="м" />
+          <Input name="windowLength" type="number" placeholder="м" />
           {hasConcreteWall && <Input name="concreteWindowLength" type="number" placeholder="м" />}
           <Input name="anchorQuantity" type="number" placeholder="шт/м²" />
           {hasConcreteWall && <Input name="concreteAnchorQuantity" type="number" placeholder="шт/м²" />}

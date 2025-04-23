@@ -1,8 +1,8 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FormProvider, SubmitHandler, useForm, useWatch } from 'react-hook-form';
-import { setObjectForm } from '../../store';
+import { objectDataSelector, setObjectForm } from '../../store';
 import { ObjectFormType } from '../../types';
 import { Checkbox, Input, Range, Select } from '../ui-kit';
 import { buildingTypeOptions, cities, WALLPAGE, wallTypeOptions } from '../../constants';
@@ -10,7 +10,13 @@ import { buildingTypeOptions, cities, WALLPAGE, wallTypeOptions } from '../../co
 export const ObjectForm = () => {
   const dispatch = useDispatch();
 
-  const methods = useForm<ObjectFormType>({ mode: 'onBlur' });
+  const formData = useSelector(objectDataSelector);
+
+  const methods = useForm<ObjectFormType>({
+    mode: 'onBlur',
+    defaultValues: formData,
+  });
+
   const { control } = methods;
 
   const navigate = useNavigate();
