@@ -1,3 +1,10 @@
 export type BracketFormType = {
-  bracket: { bracketMaterial: string; bracketType: string; bracketName: string; bracketQuantity: number | null }[];
+  bracket: {
+    bracketMaterial: string;
+    bracketType: string;
+    bracketName: string;
+    bracketQuantity: number;
+    bracketBase: string;
+    bracketConduction: number;
+  }[];
 };

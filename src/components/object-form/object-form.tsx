@@ -1,11 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FormProvider, SubmitHandler, useForm, useWatch } from 'react-hook-form';
 import { objectDataSelector, setObjectForm } from '../../store';
 import { ObjectFormType } from '../../types';
 import { Checkbox, Input, Range, Select } from '../ui-kit';
 import { buildingTypeOptions, cities, WALLPAGE, wallTypeOptions } from '../../constants';
+import { resetWallForm } from '../../store/';
+import { resetSystemForm } from '../../store/';
+import { resetBracketForm } from '../../store/';
 
 export const ObjectForm = () => {
   const dispatch = useDispatch();
@@ -17,6 +20,8 @@ export const ObjectForm = () => {
     defaultValues: formData,
   });
 
+  const { resetField } = methods;
+
   const { control } = methods;
 
   const navigate = useNavigate();
@@ -24,6 +29,11 @@ export const ObjectForm = () => {
   const onSubmit: SubmitHandler<ObjectFormType> = useCallback(
     (data) => {
       dispatch(setObjectForm(data));
+      if (data !== formData) {
+        dispatch(resetWallForm());
+        dispatch(resetSystemForm());
+        dispatch(resetBracketForm());
+      }
       navigate(WALLPAGE);
     },
     [dispatch, navigate]
@@ -31,13 +41,19 @@ export const ObjectForm = () => {
 
   const wallTypeField = useWatch({ control, name: 'wallType' });
 
+  useEffect(() => {
+    if (wallTypeField !== 'frame') {
+      resetField('hasConcreteWall', { defaultValue: false });
+    }
+  }, [wallTypeField]);
+
   return (
     <>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)} noValidate>
           <Input name="objectName" placeholder="Название объекта" type="text" minLength={5} maxLength={100} />
           <Input name="objectAddress" placeholder="Адрес объекта" type="text" minLength={5} maxLength={100} />
-          <Select name="city" placeholder="Город строительства" options={cities} errorMessage="Выберете город" />
+          <Select name="cityValue" placeholder="Город строительства" options={cities} errorMessage="Выберете город" />
           <Select
             name="buildingType"
             placeholder="Назначение здания"

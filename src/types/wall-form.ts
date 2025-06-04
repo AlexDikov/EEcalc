@@ -10,10 +10,10 @@ export type WallFormType = {
   insulationHeatConduction: number;
   insulationName: string;
   insulationThickness: number;
-  isblockSp: boolean;
-  isconcreteSp: boolean;
-  isinsulationSp: boolean;
-  issecondInsulationSp: boolean;
+  isBlockSp: boolean;
+  isConcreteSp: boolean;
+  isInsulationSp: boolean;
+  isSecondInsulationSp: boolean;
   secondInsulationDensity: string;
   secondInsulationHeatConduction: number;
   secondInsulationName: string;

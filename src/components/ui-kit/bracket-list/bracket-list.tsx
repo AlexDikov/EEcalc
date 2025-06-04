@@ -9,8 +9,9 @@ export const BracketList = memo(({ fields, remove }: BracketListProps) => {
         <BracketItemForm
           bracketMaterialName={`bracket.${index}.bracketMaterial`}
           bracketTypeName={`bracket.${index}.bracketType`}
-          bracketSelectName={`bracket.${index}.bracketSelect`}
+          bracketSelectName={`bracket.${index}.bracketName`}
           bracketQuantityName={`bracket.${index}.bracketQuantity`}
+          bracketBaseName={`bracket.${index}.bracketBase`}
           remove={remove}
           key={field.id}
           index={index}
