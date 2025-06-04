@@ -1,1 +1,1 @@
-export { bracketFormSelector } from './base-selectors';
+export { bracketDataSelector } from './base-selectors';

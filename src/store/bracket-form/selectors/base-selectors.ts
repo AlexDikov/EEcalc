@@ -1,3 +1,3 @@
 import { BracketFormType, RootState } from '../../../types';
 
-export const bracketFormSelector = (state: RootState): { formData: BracketFormType | undefined } => state.bracketForm;
+export const bracketDataSelector = (state: RootState): BracketFormType | undefined => state.bracketForm.formData;

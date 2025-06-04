@@ -14,13 +14,25 @@ import {
   SYSTEMPAGE,
 } from '../../constants';
 import { Checkbox } from '../ui-kit';
+import { wallDataSelector } from '../../store/';
 
 export const WallForm = () => {
   const dispatch = useDispatch();
 
-  const methods = useForm<WallFormType>({ mode: 'onBlur' });
+  const objectData = useSelector(objectDataSelector);
+
+  const wallType = objectData?.wallType;
+
+  const formData = useSelector(wallDataSelector);
+
+  const methods = useForm<WallFormType>({
+    mode: 'onBlur',
+    defaultValues: formData,
+  });
 
   const { control } = methods;
+
+  const hasSecondInsulation = useWatch({ control, name: 'hasSecondInsulation' });
 
   const navigate = useNavigate();
 
@@ -31,12 +43,6 @@ export const WallForm = () => {
     },
     [dispatch, navigate]
   );
-
-  const objectData = useSelector(objectDataSelector);
-
-  const wallType = objectData.formData?.wallType;
-
-  const hasSecondInsulation = useWatch({ control, name: 'hasSecondInsulation' });
 
   return (
     <>

@@ -7,7 +7,7 @@ export const objectFormMock: ObjectFormType = {
   innerHumidity: 55,
   innerTemp: 20,
   mr: 0.63,
-  objectAddress: undefined,
-  objectName: undefined,
+  objectAddress: 'adadaa',
+  objectName: 'adadaf',
   hasConcreteWall: true,
 };

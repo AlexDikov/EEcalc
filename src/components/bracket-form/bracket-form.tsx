@@ -1,8 +1,8 @@
-import { useDispatch } from 'react-redux';
-import { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FormProvider, SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
-import { setBracketForm } from '../../store';
+import { bracketDataSelector, setBracketForm } from '../../store';
 import { BracketFormType } from '../../types';
 import { BracketList } from '../ui-kit';
 import { SYSTEMPAGE } from '../../constants';
@@ -10,7 +10,9 @@ import { SYSTEMPAGE } from '../../constants';
 export const BracketForm = () => {
   const dispatch = useDispatch();
 
-  const methods = useForm<BracketFormType>();
+  const formData = useSelector(bracketDataSelector);
+
+  const methods = useForm<BracketFormType>({ defaultValues: { bracket: formData?.bracket } });
 
   const { control } = methods;
 
@@ -20,6 +22,12 @@ export const BracketForm = () => {
     name: 'bracket',
     control,
   });
+
+  useEffect(() => {
+    if (formData === undefined) {
+      append({ bracketMaterial: 'aluminium', bracketType: 'light', bracketName: '', bracketQuantity: null });
+    }
+  }, []);
 
   const onSubmit: SubmitHandler<BracketFormType> = useCallback(
     (data) => {

@@ -1,1 +1,1 @@
-export { wallFormSelector } from './base-selectors';
+export { wallDataSelector } from './base-selectors';
