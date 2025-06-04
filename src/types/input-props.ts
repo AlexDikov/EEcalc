@@ -6,4 +6,5 @@ export type InputProps = {
   max?: number;
   minLength?: number;
   maxLength?: number;
+  step?: string;
 };

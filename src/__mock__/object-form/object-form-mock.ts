@@ -3,11 +3,11 @@ import { ObjectFormType } from '../../types';
 export const objectFormMock: ObjectFormType = {
   buildingType: 'social',
   wallType: 'frame',
-  city: 'msk',
+  cityValue: 'msk',
   innerHumidity: 55,
   innerTemp: 20,
-  mr: 0.63,
-  objectAddress: 'adadaa',
-  objectName: 'adadaf',
+  mr: 1,
+  objectAddress: 'Москва, улица Ленина 25',
+  objectName: 'ЖК ЖилГуд',
   hasConcreteWall: true,
 };

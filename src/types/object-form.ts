@@ -1,7 +1,7 @@
 export type ObjectFormType = {
   buildingType: string;
   wallType: string;
-  city: string;
+  cityValue: string;
   innerHumidity: number;
   innerTemp: number;
   mr: number;

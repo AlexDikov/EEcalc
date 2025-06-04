@@ -1,1 +1,1 @@
-export { wallFormSlice, wallFormReducer, setWallForm } from './wall-data-slice';
+export { wallFormSlice, wallFormReducer, setWallForm, resetWallForm } from './wall-data-slice';

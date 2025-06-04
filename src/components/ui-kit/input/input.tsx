@@ -40,6 +40,7 @@ export const Input = ({ name, placeholder, type, min, max, minLength, maxLength 
         })}
         placeholder={placeholder}
         type={type}
+        step="any"
       />
       <ErrorMessage name={name} />
     </>

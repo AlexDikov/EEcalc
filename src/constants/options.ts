@@ -28,7 +28,7 @@ export const wallTypeOptions = [
   },
   {
     name: 'Беcкаркасная',
-    value: 'brick',
+    value: 'block',
   },
 ];
 
@@ -54,18 +54,110 @@ export const bracketMaterialOptions = [
   },
 ];
 
-export const bracketNameOptions = [
+export const aluminiumBracketOptions = [
+  {
+    name: 'MFT-MF HS',
+    value: 'MFT-MF HS',
+  },
   {
     name: 'MFT-MF S',
-    value: 'mf-s',
+    value: 'MFT-MF S',
   },
   {
     name: 'MFT-MF M',
-    value: 'mf-m',
+    value: 'MFT-MF M',
+  },
+  {
+    name: 'MFT-MF LM',
+    value: 'MFT-MF LM',
   },
   {
     name: 'MFT-MF L',
-    value: 'mf-l',
+    value: 'MFT-MF L',
+  },
+  {
+    name: 'MFT-MF LH',
+    value: 'MFT-MF LH',
+  },
+];
+
+export const aluminiumHeavyBracketOptions = [
+  {
+    name: 'MFT-RB S',
+    value: 'MFT-RB S',
+  },
+  {
+    name: 'MFT-RB M',
+    value: 'MFT-RB M',
+  },
+  {
+    name: 'MFT-RB L',
+    value: 'MFT-RB L',
+  },
+  {
+    name: 'MFT-RB LH',
+    value: 'MFT-RB LH',
+  },
+];
+
+export const steelBracketOptions = [
+  {
+    name: 'MFT-MF HS(sts)',
+    value: 'MFT-MF HS(sts)',
+  },
+  {
+    name: 'MFT-MF S(sts)',
+    value: 'MFT-MF S(sts)',
+  },
+  {
+    name: 'MFT-MF M(sts)',
+    value: 'MFT-MF M(sts)',
+  },
+  {
+    name: 'MFT-MF LM(sts)',
+    value: 'MFT-MF LM(sts)',
+  },
+  {
+    name: 'MFT-MF L(sts)',
+    value: 'MFT-MF L(sts)',
+  },
+  {
+    name: 'MFT-MF LH(sts)',
+    value: 'MFT-MF LH(sts)',
+  },
+];
+
+export const steelHeavyBracketOptions = [
+  {
+    name: 'MFT-RB S(sts)',
+    value: 'MFT-RB S(sts)',
+  },
+  {
+    name: 'MFT-RB M(sts)',
+    value: 'MFT-RB M(sts)',
+  },
+  {
+    name: 'MFT-RB LM(sts)',
+    value: 'MFT-RB LM(sts)',
+  },
+  {
+    name: 'MFT-RB L(sts)',
+    value: 'MFT-RB L(sts)',
+  },
+  {
+    name: 'MFT-RB LH(sts)',
+    value: 'MFT-RB LH(sts)',
+  },
+];
+
+export const bracketBaseOptions = [
+  {
+    label: 'бетон',
+    value: 'concrete',
+  },
+  {
+    label: 'блок/кирпич',
+    value: 'block',
   },
 ];
 

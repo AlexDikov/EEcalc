@@ -9,9 +9,12 @@ export const bracketFormSlice = createSlice({
     setBracketForm: (state, action) => {
       return { ...state, formData: action.payload };
     },
+    resetBracketForm: (state) => {
+      return { ...state, formData: undefined };
+    },
   },
 });
 
-export const { setBracketForm } = bracketFormSlice.actions;
+export const { setBracketForm, resetBracketForm } = bracketFormSlice.actions;
 
 export const bracketFormReducer = bracketFormSlice.reducer;

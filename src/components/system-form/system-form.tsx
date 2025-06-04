@@ -34,18 +34,25 @@ export const SystemForm = () => {
 
   const objectData = useSelector(objectDataSelector);
 
-  const hasConcreteWall = objectData?.hasConcreteWall;
+  const { hasConcreteWall, wallType } = objectData!;
 
   return (
     <>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <Input name="wallArea" type="number" placeholder="м²" />
-          {hasConcreteWall && <Input name="concreteWallArea" type="number" placeholder="м²" />}
-          <Input name="windowLength" type="number" placeholder="м" />
-          {hasConcreteWall && <Input name="concreteWindowLength" type="number" placeholder="м" />}
-          <Input name="anchorQuantity" type="number" placeholder="шт/м²" />
-          {hasConcreteWall && <Input name="concreteAnchorQuantity" type="number" placeholder="шт/м²" />}
+          {hasConcreteWall || wallType === 'monolith' ? (
+            <>
+              <Input name="concreteWallArea" type="number" placeholder="м²" />
+              <Input name="concreteWindowLength" type="number" placeholder="м" />
+              <Input name="concreteAnchorQuantity" type="number" placeholder="шт/м²" />
+            </>
+          ) : (
+            <>
+              <Input name="wallArea" type="number" placeholder="м²" />
+              <Input name="windowLength" type="number" placeholder="м" />
+              <Input name="anchorQuantity" type="number" placeholder="шт/м²" />
+            </>
+          )}
           <Select name="anchorDepth" placeholder="мм" options={anchorDepthOptions} errorMessage="Выберете глубину" />
           <RadioGroup options={windowPositionOptions} name="windowPosition" />
           <RadioGroup options={insulationPositionOptions} name="insulationPosition" />
