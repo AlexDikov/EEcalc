@@ -4,18 +4,12 @@ import { cities } from '../../constants';
 import { bracketDensity, useReportCalculations } from '../../utils';
 import { BracketQuantityList, BracketHeatConductionList, BracketInfoList } from '../report';
 import { ReportTable } from './report-table';
-import { bracketFormMock, objectFormMock, systemFormMock, wallFormMock } from '../../__mock__';
 
 export const Report = () => {
-  // const objectData = useSelector(objectDataSelector);
-  // const wallData = useSelector(wallDataSelector);
-  // const systemData = useSelector(systemDataSelector);
-  // const bracketData = useSelector(bracketDataSelector)!;
-
-  const objectData = objectFormMock;
-  const wallData = wallFormMock;
-  const systemData = systemFormMock;
-  const bracketData = bracketFormMock;
+  const objectData = useSelector(objectDataSelector);
+  const wallData = useSelector(wallDataSelector);
+  const systemData = useSelector(systemDataSelector);
+  const bracketData = useSelector(bracketDataSelector)!;
 
   const {
     cityValue,
