@@ -9,9 +9,12 @@ export const systemFormSlice = createSlice({
     setSystemForm: (state, action) => {
       return { ...state, formData: action.payload };
     },
+    resetSystemForm: (state) => {
+      return { ...state, formData: undefined };
+    },
   },
 });
 
-export const { setSystemForm } = systemFormSlice.actions;
+export const { setSystemForm, resetSystemForm } = systemFormSlice.actions;
 
 export const systemFormReducer = systemFormSlice.reducer;

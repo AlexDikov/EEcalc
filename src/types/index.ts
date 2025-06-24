@@ -14,3 +14,5 @@ export type { ErrorProps } from './error-props';
 export type { WallItemFormProps } from './wall-item-form-props';
 export type { BracketItemFormProps } from './bracket-item-form-props';
 export type { BracketListProps } from './bracket-list-props';
+export type { BracketQuantityListProps } from './bracket-quantity-list-props';
+export type { TableType } from './table-type';

@@ -5,7 +5,7 @@ import { Input } from '../input';
 import { Select } from '../select';
 
 export const WallItemForm = ({ title, subtitle, material, nameOptions, densityOptions }: WallItemFormProps) => {
-  const isSP = useWatch({ name: `is${material}Sp` });
+  const isSP = useWatch({ name: `is${material.charAt(0).toUpperCase() + material.slice(1)}Sp` });
 
   const hasSecondInsulation = useWatch({ name: 'hasSecondInsulation' });
 
@@ -45,7 +45,10 @@ export const WallItemForm = ({ title, subtitle, material, nameOptions, densityOp
       )}
       <Input name={`${material}Thickness`} placeholder="Толщина, мм" type="number" />
       <Input name={`${material}HeatConduction`} placeholder="Теплопроводность, Вт/м²" type="number" max={3} />
-      <Checkbox name={`is${material}Sp`} label="учитывать СП 50.133300.2012" />
+      <Checkbox
+        name={`is${material.charAt(0).toUpperCase() + material.slice(1)}Sp`}
+        label="учитывать СП 50.133300.2012"
+      />
     </>
   );
 };

@@ -9,9 +9,12 @@ export const wallFormSlice = createSlice({
     setWallForm: (state, action) => {
       return { ...state, formData: action.payload };
     },
+    resetWallForm: (state) => {
+      return { ...state, formData: undefined };
+    },
   },
 });
 
-export const { setWallForm } = wallFormSlice.actions;
+export const { setWallForm, resetWallForm } = wallFormSlice.actions;
 
 export const wallFormReducer = wallFormSlice.reducer;

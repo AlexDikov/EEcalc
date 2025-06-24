@@ -1,1 +1,1 @@
-export { bracketFormSlice, bracketFormReducer, setBracketForm } from './bracket-data-slice';
+export { bracketFormSlice, bracketFormReducer, setBracketForm, resetBracketForm } from './bracket-data-slice';
